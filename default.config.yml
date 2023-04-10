@@ -6,12 +6,17 @@ configure_terminal: true
 configure_osx: true
 
 # Set to 'true' to configure the Dock via dockutil.
-configure_dock: false
-dockitems_remove: []
-# - Launchpad
-# - TV
-# - Podcasts
-# - 'App Store'
+configure_dock: true
+dockitems_remove:
+  - Launchpad
+  - TV
+  - Podcasts
+  - 'App Store'
+  - Photos
+  - Maps
+  - Facetime
+  - Contacts
+  - Notes
 dockitems_persist: []
 # - name: "Sublime Text"
 #   path: "/Applications/Sublime Text.app/"
@@ -24,44 +29,45 @@ sudoers_custom_config: ''
 #   # Allow users in admin group to use sudo with no password.
 #   %admin ALL=(ALL) NOPASSWD: ALL
 
-dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
+dotfiles_repo: https://github.com/S-git1/dotfiles.git
 dotfiles_repo_accept_hostkey: true
 dotfiles_repo_local_destination: ~/Development/GitHub/dotfiles
 dotfiles_files:
-  - .zshrc
-  - .gitignore
-  - .inputrc
+#  - .zshrc
+#  - .gitignore
+#  - .inputrc
   - .osx
-  - .vimrc
+#  - .vimrc
 
 homebrew_installed_packages:
   # - ansible # Installed via Pip.
-  - autoconf
-  - bash-completion
-  - doxygen
-  - gettext
-  - gifsicle
-  - git
-  - github/gh/gh
-  - go
-  - gpg
-  - httpie
-  - iperf
-  - libevent
-  - sqlite
-  - mcrypt
-  - nmap
-  - node
-  - nvm
-  - php
-  - ssh-copy-id
-  - cowsay
-  - readline
-  - openssl
-  - pv
-  - wget
-  - wrk
-  - zsh-history-substring-search
+   - exiftool
+#  - autoconf
+#  - bash-completion
+#  - doxygen
+#  - gettext
+#  - gifsicle
+#  - git
+#  - github/gh/gh
+#  - go
+#  - gpg
+#  - httpie
+#  - iperf
+#  - libevent
+#  - sqlite
+#  - mcrypt
+#  - nmap
+#  - node
+#  - nvm
+#  - php
+#  - ssh-copy-id
+#  - cowsay
+#  - readline
+#  - openssl
+#  - pv
+#  - wget
+#  - wrk
+#  - zsh-history-substring-search
 
 homebrew_taps:
   - homebrew/core
@@ -69,20 +75,51 @@ homebrew_taps:
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - chromedriver
-  - docker
+#  - chromedriver
+#  - docker
   - dropbox
   - firefox
   - google-chrome
-  - handbrake
-  - licecap
-  - sequel-ace
-  - slack
-  - sublime-text
-  - transmit
+  - qbittorrent
+  - grandperspective
+  - latest
+  - appcleaner
+  - iina
+  - karabiner-elements
+  - scroll-reverser
+  - google-drive
+  - onedrive
+#  - licecap
+#  - sequel-ace
+#  - slack
+#  - sublime-text
+#  - transmit
 
 # See `geerlingguy.mas` role documentation for usage instructions.
-mas_installed_apps: []
+mas_upgrade_all_apps: true # newly added in attempt to get mas_unistalled_apps to run without skipping
+
+mas_uninstalled_apps: # special permimssion required to unistalled App Store installed apps? Does not work, seems to be bug
+  - { id: 408981434, name: "iMovie" }
+  - { id: 409183694, name: "Keynote" }
+  - { id: 409201541, name: "Pages" }
+  - { id: 409203825, name: "Numbers" }
+  - { id: 682658836, name: "GarageBand" }
+  
+mas_installed_apps:
+  - { id: 1333542190, name: "1Password 7" }
+  - { id: 425424353, name: "The Unarchiver" }
+  - { id: 975890633, name: "HotKey" }
+  - { id: 1295203466, name: "Microsoft Remote Desktop" }
+  - { id: 1099568401, name: "Home Assistant" }
+  - { id: 1319778037, name: "iStat Menus" }
+  - { id: 470158793, name: "Keka" }
+  - { id: 1365531024, name: "1Blocker" }
+  - { id: 1251572132, name: "Fresco" }
+  - { id: 1176895641, name: "Spark" }
+  - { id: 417375580, name: "BetterSnapTool" }
+  - { id: 869223134, name: "KakaoTalk" }
+#  - { id: 497799835, name: "Xcode" }
+
 mas_email: ""
 mas_password: ""
 
