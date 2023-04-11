@@ -125,6 +125,12 @@ mas_password: ""
 
 osx_script: "~/.osx --no-restart"
 
+# choose one or the other to run command line commands in .osx or use Ansible tasks
+osx_use_dotfile: false
+osx_use_defaults: true
+
+osx_defaults: []
+
 # Install packages from other package managers.
 # Note: You are responsible for making sure the required package managers are
 # installed, eg. through homebrew.
