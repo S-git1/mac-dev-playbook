@@ -18,9 +18,9 @@ dockitems_remove:
   - Contacts
   - Notes
 dockitems_persist: []
-# - name: "Sublime Text"
-#   path: "/Applications/Sublime Text.app/"
-#   pos: 5
+- name: "Audio MIDI Setup"
+  path: "/Applications/Utilities/Audio MIDI Setup.app/"
+  pos: 11
 
 configure_sudoers: false
 sudoers_custom_config: ''
@@ -42,6 +42,7 @@ dotfiles_files:
 homebrew_installed_packages:
   # - ansible # Installed via Pip.
    - exiftool
+   - iperf
 #  - autoconf
 #  - bash-completion
 #  - doxygen
@@ -52,7 +53,7 @@ homebrew_installed_packages:
 #  - go
 #  - gpg
 #  - httpie
-#  - iperf
+
 #  - libevent
 #  - sqlite
 #  - mcrypt
@@ -76,11 +77,11 @@ homebrew_taps:
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
 #  - chromedriver
-#  - docker
+  - docker
   - dropbox
   - firefox
   - google-chrome
-  - qbittorrent
+  - transmission
   - grandperspective
   - latest
   - appcleaner
@@ -89,6 +90,18 @@ homebrew_cask_apps:
   - scroll-reverser
   - google-drive
   - onedrive
+  - microsoft-excel
+  - microsoft-word
+  - microsoft-powerpoint
+  - r
+  - rstudio
+  - balenaetcher
+  - radio-silence
+  - vnc-viewer
+  - tailscale
+  - notion
+  - obs
+  - visual-studio-code
 #  - licecap
 #  - sequel-ace
 #  - slack
@@ -118,7 +131,7 @@ mas_installed_apps:
   - { id: 1176895641, name: "Spark" }
   - { id: 417375580, name: "BetterSnapTool" }
   - { id: 869223134, name: "KakaoTalk" }
-#  - { id: 497799835, name: "Xcode" }
+  - { id: 497799835, name: "Xcode" }
 
 mas_email: ""
 mas_password: ""
@@ -129,7 +142,10 @@ osx_script: "~/.osx --no-restart"
 osx_use_dotfile: false
 osx_use_defaults: true
 
-osx_defaults: []
+osx_defaults: #[]
+  - { domain: NSGlobalDomain, key: AppleInterfaceStyle, type: string, value: Dark }
+  - { domain: com.apple.finder, key: ShowExternalHardDrivesOnDesktop, type: bool, value: true }
+  - { domain: com.apple.finder, key: ShowHardDrivesOnDesktop, type: bool, value: true }
 
 # Install packages from other package managers.
 # Note: You are responsible for making sure the required package managers are
